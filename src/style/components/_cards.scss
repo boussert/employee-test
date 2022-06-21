@@ -15,6 +15,7 @@
     border-radius: 8px;
     gap: 8px;
     box-shadow: $shadow-sm;
+    height: 150px;
 
     &:hover {
         background-color: var(--card-bg-color-hover);
@@ -36,16 +37,23 @@
 
     &__title {
         @include heading-h2();
+        @include ellipsis();
         margin-top: 4px;
+    }
+
+    &__subtitle-container {
+        display: flex;
     }
 
     &__subtitle {
         @include subtitle();
         margin: 0;
+        flex: 1 1 auto;
     }
 
     &__content {
         flex: 1 1 auto;
         color: var(--card-color);
+        overflow: hidden;
     }
 }

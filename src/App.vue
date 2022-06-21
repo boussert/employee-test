@@ -2,10 +2,10 @@
   <div class="app flex flex-col">
     <header>
     </header>
-    <div class="flex flex-auto">
-      <nav>
+    <div class="overflow-hidden flex flex-auto">
+      <nav class="flex-grow-0 flex-shrink-0">
       </nav>
-      <main class="flex-auto p-4">
+      <main class="overflow-hidden flex flex-auto p-4">
         <router-view />
       </main>
     </div>
