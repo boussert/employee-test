@@ -1,8 +1,9 @@
 // Default card theme
 :root {
-  --card-bg-color: #{$white};
-  --card-bg-color-hover: #{$gray-50};
-  --card-image-bg-color: #{$gray-100};
+    --card-bg-color: #{$white};
+    --card-bg-color-hover: #{$gray-50};
+    --card-image-bg-color: #{$gray-100};
+    --card-color: hsl(210, 21%, 33%);
 }
 
 // Generic card style
@@ -20,10 +21,11 @@
     }
 
     &__image {
-        width: 125px;
+        width: 110px;
         border-radius: 8px;
         background-color: var(--card-image-bg-color);
         overflow: hidden;
+        flex: 0 0 auto;
 
         img {
             object-fit: cover;
@@ -34,9 +36,16 @@
 
     &__title {
         @include heading-h2();
+        margin-top: 4px;
     }
 
     &__subtitle {
         @include subtitle();
+        margin: 0;
+    }
+
+    &__content {
+        flex: 1 1 auto;
+        color: var(--card-color);
     }
 }

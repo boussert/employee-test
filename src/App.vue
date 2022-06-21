@@ -1,23 +1,11 @@
 <template>
-  <div class="app">
-    <header class="app__header">
-      <input type="text" aria-label="Search within employees" placeholder="Search...">
-      <div style="flex: 1 1 auto;"></div>
-      <div class="header__actions">
-        <span>Ico 1</span>
-        <span>Ico 2</span>
-      </div>
-      <div>
-        <span>Ico account</span>
-        My profile
-      </div>
+  <div class="app flex flex-col">
+    <header>
     </header>
-    <div class="app__content">
-      <nav style="flex: 0 0 auto;">
-        <div>Home</div>
-        <div>Employees</div>
+    <div class="flex flex-auto">
+      <nav>
       </nav>
-      <main style="flex: 1 1 auto;">
+      <main class="flex-auto p-4">
         <router-view />
       </main>
     </div>
@@ -47,38 +35,18 @@ html,
 
 body {
   font-family: Roboto, Arial;
-  // background-color: var(--body-bg-color);
   background-color: #F3F5F7;
   padding: 0;
 }
 
 nav {
-  background-color: #FFFFFF; 
+  background-color: #{$white};
+  width: 120px;
 }
 
-main {
-  padding: 16px;
-}
-
-.header__actions {
- border-right: 1px solid black; 
-}
-
-.app {
-    display: flex;
-    flex-direction: column;
-
-    &__header {
-      flex: 0 0 auto;
-      background-color: #FFFFFF;
-      display: flex;
-      align-items: center;
-      padding: 16px;
-    }
-
-    &__content {
-      display: flex;
-      flex: 1 1 auto;
-    }
+header {
+  height: 32px;
+  background-color: #{$white};
+  flex: 0 0 auto;
 }
 </style>

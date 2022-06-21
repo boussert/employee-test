@@ -6,10 +6,9 @@
     <div class="card__content">
         <p class="card__subtitle">{{employee.job_title}}</p>
         <h2 class="card__title">{{employee.name}}</h2>
-        <p>
-            <span>icon location</span>
-            <span>{{employee.department}}</span>
-            <span>{{employee.company_name}}</span>
+        <p class="flex gap-2 items-center">
+            <span class="material-icons"> work </span>
+            <span>{{employee.department}} at {{employee.company_name}}</span>
         </p>
     </div>
     <div class="tag">{{employee.experience_in_job}} ans</div>

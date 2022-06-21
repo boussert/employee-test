@@ -1,14 +1,14 @@
 <template>
   <div>
-    <div style="display: flex; align-items: center;">
-      <h1 style="flex: 1 1 auto;">Employees</h1>
+    <div class="flex items-center">
+      <h1 class="flex-auto">Employees</h1>
       <div>
-        <input type="text" placeholder="Filter">
+        <el-input v-model="searchQuery" placeholder="Search an employee" />
       </div>
     </div>
-    <ul class="employees-grid">
-      <li>
-        <EmployeeCard v-for="(employee, index) in employees" :key="index" :employee="employee"></EmployeeCard>
+    <ul class="employees-grid list-none">
+      <li v-for="(employee, index) in employees" :key="index">
+        <EmployeeCard :employee="employee"></EmployeeCard>
       </li>
     </ul>
   </div>
@@ -29,6 +29,7 @@ import { useStore } from "../store";
   }
 })
 export default class Employees extends Vue {
+  searchQuery = '';
   store = useStore();
 
   async mounted() {
@@ -38,4 +39,11 @@ export default class Employees extends Vue {
 </script>
 
 <style lang="scss" scoped>
+.employees-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+    align-content: flex-start;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 430px), 1fr));
+}
 </style>
