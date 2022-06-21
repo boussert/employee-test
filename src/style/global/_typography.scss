@@ -1,0 +1,14 @@
+@mixin heading-h2() {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 25px;
+}
+
+@mixin subtitle() {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 23px;
+    color: $gray-500;
+}

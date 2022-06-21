@@ -1,0 +1,42 @@
+// Default card theme
+:root {
+  --card-bg-color: #{$white};
+  --card-bg-color-hover: #{$gray-50};
+  --card-image-bg-color: #{$gray-100};
+}
+
+// Generic card style
+
+.card {
+    display: flex;
+    background-color: var(--card-bg-color);
+    padding: 16px;
+    border-radius: 8px;
+    gap: 8px;
+    box-shadow: $shadow-sm;
+
+    &:hover {
+        background-color: var(--card-bg-color-hover);
+    }
+
+    &__image {
+        width: 125px;
+        border-radius: 8px;
+        background-color: var(--card-image-bg-color);
+        overflow: hidden;
+
+        img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    &__title {
+        @include heading-h2();
+    }
+
+    &__subtitle {
+        @include subtitle();
+    }
+}

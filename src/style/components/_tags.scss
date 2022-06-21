@@ -1,0 +1,17 @@
+// Default tag theme
+:root {
+    --tag-bg-color: #4C6FFF; // TODO this should not be hardcoded, it should be inside an accent color palette.
+    --tag-color: #{$white};
+}
+
+.tag {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2px 8px;
+    gap: 8px;
+    height: 24px;
+    color: var(--tag-color);
+    background: var(--tag-bg-color);
+    border-radius: 6px;
+}
