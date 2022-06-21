@@ -1,4 +1,5 @@
 import { IEmployee } from '@/modules/employee/interface/IEmployee';
+import { api } from "../../api/helpers";
 
 export interface IEmployeeState {
     employees: IEmployee[]
@@ -20,29 +21,7 @@ export default {
     },
     actions: {
         async fetchEmployees(context: any) {
-            // const employees = await api.getEmployees();
-            const employees: any[] = [{
-                "id": 1,
-                "name": "Calida MacGahy",
-                "job_title": "Account Coordinator",
-                "department": "Engineering",
-                "company_name": "Browsedrive",
-                "experience_in_job": 3
-            }, {
-                "id": 2,
-                "name": "MacGahy",
-                "job_title": "Account Coordinator",
-                "department": "Engineering",
-                "company_name": "Browsedrive",
-                "experience_in_job": 3
-            }, {
-                "id": 3,
-                "name": "Calida",
-                "job_title": "Account Coordinator",
-                "department": "Engineering",
-                "company_name": "Browsedrive",
-                "experience_in_job": 3
-            }];
+            const employees = await api.getEmployees();
             context.commit('setEmployees', employees);
         }
     },
